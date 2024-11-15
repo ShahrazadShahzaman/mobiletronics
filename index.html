@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Mobile Online Store</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="./carousel and logo/mobilotronics.png" alt="Logo" width="60px" class="logo"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#footerandaboutus">About us</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Mobile Brands
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#mirow">Xiaomi</a></li>
+                  <li><a class="dropdown-item" href="#rowiphone">Apple</a></li>
+                  <li><a class="dropdown-item" href="#tecnorow">Tecno</a></li>
+                  <li><a class="dropdown-item" href="#samsungrow">Samsung</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success-light" >
+                <i class="bi bi-search"></i> 
+              </button>
+            </form>
+          <button id="loginBtn" type="button" class="btn btn-outline-light"  data-bs-toggle="modal" data-bs-target="#loginModal">login</button>
+          <a href="#" class="navbar-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="badge" id="cart-count">0</span>
+          </a>
+          </div>
+        </div>
+      </nav>
+     
+  <!-- slider -->
+  <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="10000">
+        <img src="./carousel and logo/apple.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="headings">Welcome To Mobilotronics</h5>
+          <p class="paragraphs">The Online Mobile Store.</p>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="./carousel and logo/moto.jpg"    class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="headings">Latest Mobiles</h5>
+          <p class="paragraphs">Find out best deals and discounts</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="./carousel and logo/samsung hero.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="headings">Best Price</h5>
+          <p class="paragraphs">Don't miss the Amazing Opportunity.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <section id="cards">
+    <div id="rowiphone" class="container">
+        <!-- Card 1 -->
+        <div class="card">
+            <img id="iphone12" src="./mobilephonespics/iphone 12 black.jpg" alt="Piece Image">
+            <h3>iPhone 12</h3> <!-- Product Name -->
+            <p>Price: pkr 175,599</p> <!-- Product Price -->
+            <div class="color-palette">
+                <div class="color-option" style="background-color: black;" onclick="changeImage('iphone12', './mobilephonespics/iphone 12 black.jpg')"></div>
+                <div class="color-option" style="background-color: purple;" onclick="changeImage('iphone12', './mobilephonespics/iphone 12 purple.jpg')"></div>
+            </div>
+            <div class="quantity-control">
+                <button onclick="decreaseQuantity('quantity1')">-</button>
+                <span id="quantity1">1</span>
+                <button onclick="increaseQuantity('quantity1')">+</button>
+            </div>
+            <div class="button-group">
+            <button class="addtocartbtn" onclick="addToCart('iPhone12', 899 , 'quantity1')">Add to Cart</button>
+            <button class="read-more" onclick="openModal('iPhone 12','The iPhone 12 brings 5G speed, the A14 Bionic chip, and a beautiful Super Retina XDR display. With its Ceramic Shield front cover for better durability and an advanced dual-camera system, it captures incredible photos and videos in all lighting conditions' )">Read More</button>
+            </div>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="card">
+            <img id="iphone13" src="./mobilephonespics/iphone 13 blue.jpg" alt="Piece Image">
+            <h3>iPhone 13</h3> <!-- Product Name -->
+            <p>Price: pkr 241999</p> <!-- Product Price -->
+            <div class="color-palette">
+                <div class="color-option" style="background-color: blue;" onclick="changeImage('iphone13', './mobilephonespics/iphone 13 blue.jpg')"></div>
+                <div class="color-option" style="background-color: green;" onclick="changeImage('iphone13', './mobilephonespics/iphone 13 green.jpg')"></div>
+            </div>
+            <div class="quantity-control">
+                <button onclick="decreaseQuantity('quantity2')">-</button>
+                <span id="quantity2">1</span>
+                <button onclick="increaseQuantity('quantity2')">+</button>
+            </div>
+            <div class="button-group">
+            <button class="addtocartbtn" onclick="addToCart('iPhone13', 899, 'quantity2')">Add to Cart</button>
+            <button class="read-more" onclick="openModal('iPhone13',' The iPhone 13 features a sleek design, a powerful A15 Bionic chip, 5G connectivity, and an advanced dual-camera system. It offers stunning photos in low light, brighter OLED display, and longer battery life—perfect for capturing every moment and staying connected')">Read More</button>
+            </div>
+         </div>
+        
+        <!-- Card 3 -->
+        <div class="card">
+            <img id="iphone14" src="./mobilephonespics/iphone 14 black.jpg" alt="Piece Image">
+            <h3>iPhone 14</h3> <!-- Product Name -->
+            <p>Price: pkr 278999</p> <!-- Product Price -->
+            <div class="color-palette">
+                <div class="color-option" style="background-color: black;" onclick="changeImage('iphone14', './mobilephonespics/iphone 14 black.jpg')"></div>
+                <div class="color-option" style="background-color: red;" onclick="changeImage('iphone14', './mobilephonespics/iphone 14 red.jpg')"></div>
+            </div>
+        <div class="quantity-control">
+            <button onclick="decreaseQuantity('quantity3')">-</button>
+            <span id="quantity3">1</span>
+            <button onclick="increaseQuantity('quantity3')">+</button>
+        </div>
+        <div class="button-group">
+        <button class="addtocartbtn" onclick="addToCart('iPhone14', 899, 'quantity3')">Add to Cart</button>
+        <button class="read-more" onclick="openModal('iPhone14', 'The iPhone 14 introduces groundbreaking safety features like crash detection, an enhanced dual-camera system for more vibrant photos, and the latest A15 Bionic chip. With all-day battery life and 5G, it offers peak performance in a sleek and durable design.')">Read More</button>
+        </div>
+       </div>
+    <div id="samsungrow" class="container">
+        <!-- Card 4 -->
+        <div class="card">
+            <img id="iphone15" src="./mobilephonespics/iphone 15 black.jpg" alt="Piece Image">
+            <h3>iPhone 15</h3> <!-- Product Name -->
+            <p>Price: pkr 175,599</p> <!-- Product Price -->
+            <div class="color-palette">
+                <div class="color-option" style="background-color: black;" onclick="changeImage('iphone15', './mobilephonespics/iphone 15 black.jpg')"></div>
+                <div class="color-option" style="background-color: blue;" onclick="changeImage('iphone15', './mobilephonespics/iphone 15 blue.jpg')"></div>
+            </div>
+            <div class="quantity-control">
+                <button onclick="decreaseQuantity('quantity4')">-</button>
+                <span id="quantity4">1</span>
+                <button onclick="increaseQuantity('quantity4')">+</button>
+            </div>
+            <div class="button-group">
+            <button class="addtocartbtn" onclick="addToCart('iPhone15', 899, 'quantity4')">Add to Cart</button>
+            <button class="read-more" onclick="openModal('iPhone15','The iPhone 15 features a refined design with Dynamic Island, a powerful A16 Bionic chip, and a next-gen camera system with improved low-light performance. Enjoy an enhanced Super Retina XDR display, all-day battery life, and USB-C for faster charging and connectivity.' )">Read More</button>
+            </div>
+        </div>
+        
+        <!-- Card 5-->
+        <div class="card">
+            <img id="samsungA05" src="./mobilephonespics/samsung galaxy A05.jpg" alt="Piece Image">
+            <h3>Samsung Galaxy samsungA05</h3> <!-- Product Name -->
+            <p>Price: pkr 29,999</p> <!-- Product Price -->
+            <div class="color-palette">
+                <div class="color-option" style="background-color: black;" onclick="changeImage('samsungA05', './mobilephonespics/samsung galaxy A05.jpg')"></div>
+                <div class="color-option" style="background-color: silver;" onclick="changeImage('samsungA05', './mobilephonespics/samsung-galaxy-a05-silver.jpg')"></div>
+            </div>
+            <div class="quantity-control">
+                <button onclick="decreaseQuantity('quantity5')">-</button>
+                <span id="quantity5">1</span>
+                <button onclick="increaseQuantity('quantity5')">+</button>
+            </div>
+            <div class="button-group">
+            <button class="addtocartbtn" onclick="addToCart('samsungA05', 899, 'quantity5')">Add to Cart</button>
+            <button class="read-more" onclick="openModal('samsungA05',' The Samsung Galaxy A05 offers a sleek design with a 6.5-inch HD+ display, a long-lasting 5000mAh battery, and a dual-camera system for capturing everyday moments. Powered by an efficient octa-core processor, it delivers smooth performance for all your daily tasks')">Read More</button>
+           </div>
+         </div>
+        
+        <!-- Card 6 -->
+        <div class="card">
+            <img id="samsung-s23ultra" src="./mobilephonespics/samsung galaxy s23 ultra.jpg" alt="Piece Image">
+            <h3>Samsung Galaxy S23 ultra</h3> <!-- Product Name -->
+            <p>Price: pkr 389,999</p> <!-- Product Price -->
+            <div class="color-palette">
+                <div class="color-option" style="background-color: black;" onclick="changeImage('samsung-s23ultra', './mobilephonespics/samsung galaxy s23 ultra.jpg')"></div>
+                <div class="color-option" style="background-color:#E6E6FA;" onclick="changeImage('samsung-s23ultra', './mobilephonespics/samsung galaxy s23 ultra lavender.jpg')"></div>
+            </div>
+        <div class="quantity-control">
+            <button onclick="decreaseQuantity('quantity6')">-</button>
+            <span id="quantity6">1</span>
+            <button onclick="increaseQuantity('quantity6')">+</button>
+        </div>
+         <div class="button-group">
+        <button class="addtocartbtn" onclick="addToCart('samsung-s23ultra', 899, 'quantity6')">Add to Cart</button>
+        <button class="read-more" onclick="openModal('samsung-s23ultra', 'The Samsung Galaxy S23 Ultra is a powerhouse with a stunning 6.8-inch Dynamic AMOLED display, a 200MP quad-camera system, and the latest Snapdragon processor for lightning-fast performance. It offers S Pen functionality, long battery life, and 5G connectivity, making it perfect for productivity and creativity on the go.')">Read More</button>
+        </div>  
+    </div>
+    <div id="tecnorow" class="container">
+        <!-- Card 7 -->
+        <div class="card">
+            <img id="samsung-a12" src="./mobilephonespics/samsung-galaxy-a12-black.jpg" alt="Piece Image">
+            <h3>Samsung Galaxy A12</h3> <!-- Product Name -->
+            <p>Price: pkr 24,999</p> <!-- Product Price -->
+            <div class="color-palette">
+                <div class="color-option" style="background-color: black;" onclick="changeImage('samsung-a12', './mobilephonespics/samsung-galaxy-a12-black.jpg')"></div>
+                <div class="color-option" style="background-color: blue;" onclick="changeImage('samsung-a12', './mobilephonespics/samsung-galaxy-a12-blue.jpg')"></div>
+            </div>
+            <div class="quantity-control">
+                <button onclick="decreaseQuantity('quantity7')">-</button>
+                <span id="quantity7">1</span>
+                <button onclick="increaseQuantity('quantity7')">+</button>
+            </div>
+            <div class="button-group">
+            <button class="addtocartbtn" onclick="addToCart('samsung-a12', 899, 'quantity7')">Add to Cart</button>
+            <button class="read-more" onclick="openModal('samsung-a12','The Samsung Galaxy A12 combines a 6.5-inch HD+ display with a quad-camera system, featuring a 48MP main camera for sharp photos. Powered by a reliable octa-core processor and a 5000mAh battery, it ensures smooth performance and long-lasting usage for everyday tasks.' )">Read More</button>
+            </div>
+        </div>
+        
+        <!-- Card 8-->
+        <div class="card">
+            <img id="camon18p" src="./mobilephonespics/tecno-camon-18p black.jpg" alt="Piece Image">
+            <h3>Tecno Camon 18p</h3> <!-- Product Name -->
+            <p>Price: pkr 45499</p> <!-- Product Price -->
+            <div class="color-palette">
+                <div class="color-option" style="background-color: black;" onclick="changeImage('camon18p', './mobilephonespics/tecno-camon-18p black.jpg')"></div>
+                <div class="color-option" style="background-color: purple;" onclick="changeImage('camon18p', './mobilephonespics/tecno-camon-18p-iris purple.jpg')"></div>
+            </div>
+            <div class="quantity-control">
+                <button onclick="decreaseQuantity('quantity8')">-</button>
+                <span id="quantity8">1</span>
+                <button onclick="increaseQuantity('quantity8')">+</button>
+            </div>
+            <div class="button-group">
+            <button class="addtocartbtn" onclick="addToCart('camon18p', 899, 'quantity8')">Add to Cart</button>
+            <button class="read-more" onclick="openModal('camon18p','The Tecno Camon 18P boasts a 6.8-inch FHD+ display with a 120Hz refresh rate for smooth visuals, a 48MP triple-camera setup for stunning photography, and a powerful MediaTek Helio G96 processor. With a 5000mAh battery and 33W fast charging, it offers reliable performance and quick recharges.')">Read More</button>
+            </div>
+        </div>
+        
+        <!-- Card 9 -->
+        <div class="card">
+            <img id="camon19neo" src="./mobilephonespics/tecno-camon-19-neo-eco black.jpg" alt="Piece Image">
+            <h3>Tecno Camon 19 neo</h3> <!-- Product Name -->
+            <p>Price: pkr 44,999</p> <!-- Product Price -->
+            <div class="color-palette">
+                <div class="color-option" style="background-color: black;" onclick="changeImage('camon19neo', './mobilephonespics/tecno-camon-19-neo-eco black.jpg')"></div>
+                <div class="color-option" style="background-color: skyblue;" onclick="changeImage('camon19neo', './mobilephonespics/tecno-camon-19-neo-ice.jpg')"></div>
+            </div>
+        <div class="quantity-control">
+            <button onclick="decreaseQuantity('quantity9')">-</button>
+            <span id="quantity9">1</span>
+            <button onclick="increaseQuantity('quantity9')">+</button>
+        </div>
+        <div class="button-group">
+        <button class="addtocartbtn" onclick="addToCart('camon19neo', 899, 'quantity9')">Add to Cart</button>
+        <button class="read-more" onclick="openModal('camon19neo', 'The Tecno Camon 18 Neo boasts a 6.8-inch FHD+ display and a 48MP AI-powered triple-camera system for stunning photos. Equipped with a MediaTek Helio G85 processor, 6GB RAM, and a 5000mAh battery, it delivers smooth performance and lasting battery life for everyday tasks and entertainment.')">Read More</button>
+        </div> 
+        </div>
+    </div>
+    <div class="container">
+        <!-- Card 10 -->
+        <div class="card">
+            <img id="camon30" src="./mobilephonespics/camon-30-iceland basaltic.jpg" alt="Piece Image">
+            <h3>Tecno Camon 30</h3> <!-- Product Name -->
+            <p>Price: pkr  57,999</p> <!-- Product Price -->
+            <div class="color-palette">
+                <div class="color-option" style="background-color: black;" onclick="changeImage('camon30', './mobilephonespics/camon-30-iceland basaltic.jpg')"></div>
+                <div class="color-option" style="background-color: sandybrown;" onclick="changeImage('camon30', './mobilephonespics/camon-30-pakistan-sahara sand.jpg')"></div>
+                <div class="color-option" style="background-color: silver;" onclick="changeImage('camon30', './mobilephonespics/camon-30-uyuni salt white.jpg')"></div>
+            </div>
+            <div class="quantity-control">
+                <button onclick="decreaseQuantity('quantity10')">-</button>
+                <span id="quantity10">1</span>
+                <button onclick="increaseQuantity('quantity10')">+</button>
+            </div>
+            <div class="button-group">
+            <button class="addtocartbtn" onclick="addToCart('camon30', 899, 'quantity10')">Add to Cart</button>
+            <button class="read-more" onclick="openModal('camon30','The Tecno Camon 30 offers a sleek 6.67-inch AMOLED display with vibrant colors and sharp details. Its 64MP AI-powered triple-camera system captures stunning photos, while the powerful MediaTek chipset ensures smooth performance. With a 5000mAh battery and fast charging, it’s designed for long-lasting use.' )">Read More</button>
+            </div>
+        </div>
+        
+        <!-- Card 11-->
+        <div class="card">
+            <img id="pop7" src="./mobilephonespics/tecno-pop-7-.jpg" alt="Piece Image">
+            <h3>Tecno Pop 7</h3> <!-- Product Name -->
+            <p>Price: pkr 18,999</p> <!-- Product Price -->
+            <div class="color-palette">
+                <div class="color-option" style="background-color: black;" onclick="changeImage('pop7', './mobilephonespics/tecno-pop-7-.jpg')"></div>
+                <div class="color-option" style="background-color: purple;" onclick="changeImage('pop7', './mobilephonespics/tecno-pop-7-purple.jpg')"></div>
+            </div>
+            <div class="quantity-control">
+                <button onclick="decreaseQuantity('quantity11')">-</button>
+                <span id="quantity11">1</span>
+                <button onclick="increaseQuantity('quantity11')">+</button>
+            </div>
+            <div class="button-group">
+            <button class="addtocartbtn" onclick="addToCart('pop7', 899, 'quantity11')">Add to Cart</button>
+            <button class="read-more" onclick="openModal('pop7','The Tecno Pop 7 features a 6.6-inch HD+ display for an immersive viewing experience. With a 13MP dual-camera system, it captures clear and vibrant photos. Powered by a reliable processor and equipped with a 5000mAh battery, it offers efficient performance and extended usage for daily tasks')">Read More</button>
+        </div>
+           </div>
+        
+        <!-- Card 12-->
+        <div class="card">
+            <img id="redmiA3" src="./mobilephonespics/redmi A3.jpg" alt="Piece Image">
+            <h3>Xiaomi Redmi A3</h3> <!-- Product Name -->
+            <p>Price: pkr 25,999</p> <!-- Product Price -->
+            <div class="color-palette">
+                <div class="color-option" style="background-color: green;" onclick="changeImage('redmiA3', './mobilephonespics/redmi A3.jpg')"></div>
+                <div class="color-option" style="background-color: black;" onclick="changeImage('redmiA3', './mobilephonespics/xiaomi-redmi-a3-pakistan-.jpg')"></div>
+            </div>
+        <div class="quantity-control">
+            <button onclick="decreaseQuantity('quantity12')">-</button>
+            <span id="quantity12">1</span>
+            <button onclick="increaseQuantity('quantity12')">+</button>
+        </div>
+       <div class="button-group">
+        <button class="addtocartbtn" onclick="addToCart('redmiA3', 899, 'quantity12')">Add to Cart</button>
+        <button class="read-more" onclick="openModal('redmiA3', 'The Redmi A3 features a 6.52-inch HD+ display for an enhanced viewing experience. With a dual-camera system including a 13MP main camera, it captures vibrant photos. Powered by a robust processor and a 5000mAh battery, it ensures smooth performance and long-lasting usage for everyday activities')">Read More</button>
+       </div>
+        </div>
+    <div id="mirow"  class="container">
+        <!-- Card 13 -->
+        <div class="card">
+            <img id="redmi-a3x" src="./mobilephonespics/xiaomi-redmi-a3x-moonlight white.jpg" alt="Piece Image">
+            <h3>Xiaomi Redmi A3x</h3> <!-- Product Name -->
+            <p>Price: pkr 20,999</p> <!-- Product Price -->
+            <div class="color-palette">
+                <div class="color-option" style="background-color: black;" onclick="changeImage('redmi-a3x', './mobilephonespics/xiaomi-redmi-a3x-moonlight white.jpg')"></div>
+                <div class="color-option" style="background-color: silver;" onclick="changeImage('redmi-a3x', './mobilephonespics/xiaomi-redmi-a3x-pakistan-.jpg')"></div>
+            </div>
+            <div class="quantity-control">
+                <button onclick="decreaseQuantity('quantity13')">-</button>
+                <span id="quantity13">1</span>
+                <button onclick="increaseQuantity('quantity13')">+</button>
+            </div>
+            <div class="button-group">
+            <button class="addtocartbtn" onclick="addToCart('redmi-a3x', 899, 'quantity13')">Add to Cart</button>
+            <button class="read-more" onclick="openModal('redmi-a3x','The Redmi A3X boasts a 6.7-inch HD+ display that delivers immersive visuals. Equipped with a 50MP dual-camera system, it captures detailed and vibrant images. With a powerful processor and a long-lasting 5000mAh battery, it provides reliable performance for everyday tasks and entertainment' )">Read More</button>
+           </div>
+        </div>
+        
+        <!-- Card 14-->
+        <div class="card">
+            <img id="redminote12" src="./mobilephonespics/xiaomi-redmi-note-12-.jpg" alt="Piece Image">
+            <h3>Xiaomi Redmi Note 12</h3> <!-- Product Name -->
+            <p>Price: pkr 41,299</p> <!-- Product Price -->
+            <div class="color-palette">
+                <div class="color-option" style="background-color: black;" onclick="changeImage('redminote12', './mobilephonespics/xiaomi-redmi-note-12-.jpg')"></div>
+                <div class="color-option" style="background-color: gold;" onclick="changeImage('redminote12', './mobilephonespics/xiaomi-redmi-note-12-sunrise gold.jpg')"></div>
+            </div>
+            <div class="quantity-control">
+                <button onclick="decreaseQuantity('quantity14')">-</button>
+                <span id="quantity14">1</span>
+                <button onclick="increaseQuantity('quantity14')">+</button>
+            </div>
+            <div class="button-group">
+            <button class="addtocartbtn" onclick="addToCart('redminote12', 899, 'quantity14')">Add to Cart</button>
+            <button class="read-more" onclick="openModal('redminote12','The Redmi Note 12 features a stunning 6.67-inch AMOLED display with a 120Hz refresh rate for smooth scrolling and vibrant colors. Its advanced 48MP triple-camera system ensures impressive photography, while the Snapdragon processor and 5000mAh battery offer powerful performance and all-day usage')">Read More</button>
+            </div>
+        </div>
+        <!-- Card 15-->
+        <div class="card">
+            <img id="redminote13" src="./mobilephonespics/xiaomi-redmi-note-13-.jpg" alt="Piece Image">
+            <h3>Xiaomi Redmi Note 13</h3> <!-- Product Name -->
+            <p>Price: pkr 55,099</p> <!-- Product Price -->
+            <div class="color-palette">
+                <div class="color-option" style="background-color: skyblue;" onclick="changeImage('redminote13', './mobilephonespics/xiaomi-redmi-note-13-.jpg')"></div>
+                <div class="color-option" style="background-color: black;" onclick="changeImage('redminote13', './mobilephonespics/xiaomi-redmi-note-13-midnight black.jpg')"></div>
+            </div>
+            <div class="quantity-control">
+                <button onclick="decreaseQuantity('quantity15')">-</button>
+                <span id="quantity15">1</span>
+                <button onclick="increaseQuantity('quantity15')">+</button>
+            </div>
+            <div class="button-group">
+            <button class="addtocartbtn" onclick="addToCart('redminote13', 899, 'quantity15')">Add to Cart</button>
+            <button class="read-more" onclick="openModal('redminote13','The Redmi Note 13 comes with a sleek 6.67-inch AMOLED display, delivering vibrant colors and smooth visuals with a 120Hz refresh rate. It features a 108MP triple-camera system for stunning photography, while its powerful processor and 5000mAh battery ensure excellent performance and long-lasting usage for all your daily tasks')">Read More</button>
+           </div>
+        </div>
+    </div>  
+</section>
+<footer id="footerandaboutus"class="bg-body-tertiary text-center text-lg-start">
+  <!-- Grid container -->
+  <div class="container p-4">
+    <!--Grid row-->
+    <div class="row">
+      <!--Grid column-->
+      <div class="col-lg-12 col-md-12 mb-4 mb-md-0">
+        <h5 class="text-uppercase">About Us</h5>
+        <p>
+          We are passionate about bringing you the best quality products at affordable prices. Our mission is to provide a seamless shopping experience,
+           whether you're browsing from your desktop or mobile device
+           At Mobiletronics, we believe in customer satisfaction and strive to deliver products that meet your needs and exceed your expectations. 
+           Thank you for choosing us for your shopping needs!
+        </p>
+      </div>
+    
+    <!--Grid row-->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2024 Copyright:
+    <a class="text-body" href="#">Mobilotronics</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+ <!--Login Modal--->
+ <div id="loginModal" class="modal fade" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="loginModalLabel">Login</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form id="loginForm" onsubmit="return validateLoginForm()">
+                  <div class="mb-3">
+                      <label for="username" class="form-label">Username:</label>
+                      <input type="text" id="username" name="username" required placeholder="Enter your username" class="form-control">
+                  </div>
+                  <div class="mb-3">
+                      <label for="password" class="form-label">Password:</label>
+                      <input type="password" id="password" name="password" required placeholder="Enter your password" class="form-control">
+                  </div>
+                  <button type="submit" class="btn2 btn-primary mt-2">Login</button>
+                  <p class="create-account mt-2">Don't have an account? <a href="#" id="createAccountLink">Create one here</a></p>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+ <!-- Modal Structure -->
+ <div id="myModal" class="modal">
+  <div class="modal-content1">
+      <span class="close-button" onclick="closeModal()">&times;</span>
+      <h3 id="modal-title"></h3>
+      <p id="modal-description"></p>
+  </div>
+</div>
+<div id="notification" class="notification hidden"></div>  
+           
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+        <script src="features.js"></script>
+</body>
+</html>
